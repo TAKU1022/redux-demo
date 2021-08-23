@@ -1,5 +1,16 @@
-export const Button = (props: any) => {
-  const { children } = props;
+import { ReactNode, VFC } from 'react';
 
-  return <button>{children}</button>;
+type Props = {
+  children: ReactNode;
+  isOperator?: boolean;
+};
+
+export const Button: VFC<Props> = (props: Props) => {
+  const { isOperator, children } = props;
+
+  return (
+    <button className={`button ${isOperator ? 'button--operator' : ''}`}>
+      {children}
+    </button>
+  );
 };
