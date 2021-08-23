@@ -1,7 +1,9 @@
-export const Result = () => {
+export const Result = (props: any) => {
+  const { result } = props;
+
   return (
-    <div>
-      <p>Result</p>
+    <div className="resultValue">
+      <p>{result}</p>
     </div>
   );
 };
